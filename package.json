@@ -1,0 +1,23 @@
+{
+  "name": "mern-boiler",
+  "version": "1.0.0",
+  "description": "MERN Stack boiler for faster usage",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ksorv/mern-boiler.git"
+  },
+  "author": "Saurav Kumar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksorv/mern-boiler/issues"
+  },
+  "homepage": "https://github.com/ksorv/mern-boiler#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.11"
+  }
+}
