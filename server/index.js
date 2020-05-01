@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 mongoose
-  .connect(config.mongoURI, {
+  .connect(config.Mongo_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false, // This one to use findOneAndModify
