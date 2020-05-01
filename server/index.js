@@ -2,12 +2,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+const dotenv = require("dotenv");
 
 const { User } = require("./models/user");
 const { auth } = require("./middlewares/auth");
 
 const config = require("./config/key");
 const port = process.env.PORT || 5000;
+
+dotenv.config();
 
 const app = express();
 
