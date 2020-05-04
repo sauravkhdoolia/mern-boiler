@@ -4,8 +4,8 @@
   "description": "MERN Stack boiler for faster usage",
   "main": "index.js",
   "scripts": {
-    "start:frontend": "npm run start --prefix client",
     "start:backend": "node server/index.js",
+    "start:frontend": "npm run start --prefix client",
     "ready": "concurrently \"npm install\" \"npm install --prefix client\"",
     "dev": "concurrently \"npm run start:*\" --kill-others"
   },
@@ -26,6 +26,7 @@
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.11"
   },

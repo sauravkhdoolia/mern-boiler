@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
 });
 
 // Auth Middleware
-app.get("/api/user/auth", auth, (req, res) => {
+app.get("/api/users/auth", auth, (req, res) => {
   res.status(200).json({
     _id: req._id,
     isAuth: true,
@@ -71,15 +71,18 @@ app.post("/api/users/login", (req, res) => {
       if (err) {
         return res.json({ loginsuccess: false, err });
       }
-    });
 
-    // Generate token
-    user.generateToken((err, user) => {
-      if (err) {
-        return res.status(400).send(err);
-      }
+      // Generate token
+      user.generateToken((err, user) => {
+        if (err) {
+          return res.status(400).send(err);
+        }
 
-      res.cookie("x_auth", user.token).status(200).json({ loginSuccess: true });
+        res
+          .cookie("x_auth", user.token)
+          .status(200)
+          .json({ loginSuccess: true });
+      });
     });
   });
 });
@@ -99,7 +102,7 @@ app.post("/api/users/register", (req, res) => {
 });
 
 // Logout user
-app.get("/api/user/logout", auth, (req, res) => {
+app.get("/api/users/logout", auth, (req, res) => {
   User.findOneAndUpdate({ _id: req.user._id }, { token: "" }, (err, user) => {
     if (err) return res.json({ success: false, err });
 
